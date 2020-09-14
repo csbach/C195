@@ -1,4 +1,4 @@
-package sample;
+package Scheduler;
 
 public class Controller {
 }
