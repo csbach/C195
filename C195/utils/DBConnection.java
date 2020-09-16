@@ -1,4 +1,4 @@
-package utils;
+package C195.utils;
 
 
 import java.sql.Connection;
@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
     //This is the utility class for creating the connection to the db
+
     private static final String protocol = "jdbc";
     private static final String vendor = ":mysql:";
     private static final String address = "//wgudb.ucertify.com/U07lFX";
@@ -21,7 +22,7 @@ public class DBConnection {
 
     //mySQL DB username and password
     private static final String username = "U07lFX";
-    private static final String password = "xxxxx";
+    private static final String password = "53689062712";
 
     public static Connection startConnection() {
         try {

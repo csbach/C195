@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="C195.ViewController.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TitledPane animated="false" collapsible="false" prefHeight="400.0" prefWidth="500.0" text="Log In">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="392.0" layoutY="335.0" mnemonicParsing="false" text="Submit" />
+                  <Button layoutX="449.0" layoutY="335.0" mnemonicParsing="false" text="Exit" />
+                  <TextField layoutX="175.0" layoutY="132.0" promptText="Username" />
+                  <TextField layoutX="175.0" layoutY="175.0" promptText="Password" />
+               </children></AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</GridPane>
