@@ -5,13 +5,11 @@ public class User {
     private int userId;
     private String userName;
     private String password;
-    private boolean active;
 
-    public User(int userId, String userName, String password, boolean active) {
+    public User(int userId, String userName, String password) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
-        this.active = active;
     }
 
     /**
@@ -44,15 +42,5 @@ public class User {
      * @param password the password to set for the user
      */
     public void setPassword(String password) { this.password = password; }
-
-    /**
-     * @return the user's state as active or not
-     */
-    public boolean getActive() { return this.active; }
-
-    /**
-     * @param active the state to be set
-     */
-    public void setActive(boolean active) { this.active = active; }
 
 }
