@@ -5,14 +5,10 @@ public class Customer {
     private int customerId;
     private String customerName;
     private int addressId;
-    private boolean active;
+    private int active;
+    private Address address;
 
-    public Customer(int customerId, String customerName, int addressId, boolean active) {
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.addressId = addressId;
-        this.active = active;
-    }
+    public Customer() {}
 
     /**
      * @return the customer's ID
@@ -52,12 +48,12 @@ public class Customer {
      *
      * @return the customer's active status
      */
-    public boolean getActive() { return this.active; }
+    public int getActive() { return this.active; }
 
     /**
      *
      * @param active the customer's status to be set
      */
-    public void setActive(boolean active) { this.active = active; }
+    public void setActive(int active) { this.active = active; }
 
 }

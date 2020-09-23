@@ -1,31 +1,29 @@
 package C195.DAO;
 
-import C195.utils.DBConnection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import C195.Main;
+
+import java.sql.*;
 
 public class DAOUserImpl implements DAOUser {
 
-    Connection conn = DBConnection.startConnection();
-
+    private static final Connection conn = Main.conn;
+    //override method from DAOUser interface
     @Override
-    public boolean login(Connection conn, String userName, String password){
-        Statement stmt = null;
-        String query = "select userName and password from U07lFX.user where (userName = '" + userName + "') and (password = '" + password + "');";
-        try {
-            stmt = conn.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);
-            if (resultSet.next()) {
+    public boolean login(String userName, String password){
+        PreparedStatement stmt = null; //create statement for MySQL
+        try { //try catch block to catch SQL Exception
+            stmt = conn.prepareStatement("select userName and password from user where (userName = ?) and (password = ?)"); //begins statement on the connection to the db
+            stmt.setString(1, userName);
+            stmt.setString(2, password);
+            ResultSet resultSet = stmt.executeQuery(); //init the results with the query through the statement
+            if (resultSet.next()) { //if the result contains a match of the user and pw, returns true. log in successful
                 return true;
-            } else if (!resultSet.next()) {
+            } else if (!resultSet.next()) { //if no result found, return false
                 return false;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); //if exception thrown, print
         }
-        return false;
+        return false; //safety return false
     }
 }
